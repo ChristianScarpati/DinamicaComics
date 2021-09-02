@@ -33,7 +33,7 @@ const DataTableTemplatingDemo = () => {
 
   useEffect(() => {
     dispatch(getDataCart()).then(data => {
-      setProducts(data.payload[0]?.products)
+      setProducts(data.payload?.products ? data.payload?.products : null)
     })
   }, [dispatch])
 
